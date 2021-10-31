@@ -98,9 +98,7 @@ function estePrezent(alfabet1, cheie)//functie verificare daca este prezent cara
                 alfabetCodat.splice(j, 1);
             }
         }
-
-    console.log(cheie);
-
+        
     console.dir(alfabetCodat);
   
     return alfabetCodat;
@@ -148,7 +146,7 @@ form.addEventListener('submit', function(e) { //In momentul in care formului i s
     }
 
     let msjCriptat1 = '';
-    let ch = cheie.value;
+    let ch = (cheie.value).toUpperCase();
     if(checkIfStringHasOnlyDigits(ch)){
         var ac = extragere(alfabet1); //locul unde se formeaza alfabetul criptat, din cel initial
         varianta1 = true;
@@ -156,7 +154,9 @@ form.addEventListener('submit', function(e) { //In momentul in care formului i s
 
     else{//daca cheia nu are doar cifre(are si litere)
         var ac = estePrezent(alfabet1, ch);
+
         console.log(`alfabetul criptat este ${ac}`)
+      
         varianta2 = true;
     }
     //prima varianta
